@@ -1,0 +1,33 @@
+# values-ca.yaml
+autoDiscovery:
+  clusterName: vt-eks-lab
+
+awsRegion: us-east-1
+
+rbac:
+  serviceAccount:
+    name: cluster-autoscaler
+    annotations:
+      eks.amazonaws.com/role-arn: "arn:aws:iam::921292479360:role/vt-eks-lab-cluster-autoscaler"
+
+extraArgs:
+  balance-similar-node-groups: "true"
+  skip-nodes-with-local-storage: "false"
+  expander: least-waste
+  scan-interval: 10s
+  skip-nodes-with-system-pods: "false"
+  stderrthreshold: info
+
+# Versão do autoscaler compatível com EKS 1.30
+image:
+  tag: v1.30.0
+
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi

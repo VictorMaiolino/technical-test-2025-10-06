@@ -1,0 +1,22 @@
+
+Error: Unsupported argument
+
+  on eks.tf line 10, in module "eks_stack":
+  10:   cluster_endpoint_public_access  = true
+
+An argument named "cluster_endpoint_public_access" is not expected here.
+
+Error: Unsupported argument
+
+  on eks.tf line 11, in module "eks_stack":
+  11:   cluster_endpoint_private_access = false
+
+An argument named "cluster_endpoint_private_access" is not expected here.
+
+Error: Unsupported argument
+
+  on eks.tf line 12, in module "eks_stack":
+  12:   cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"] 
+
+An argument named "cluster_endpoint_public_access_cidrs" is not expected
+here.
